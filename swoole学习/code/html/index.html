@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+html / index.html
+<script>
+var ws = new WebSocket("ws://132.232.18.232:8881");
+ws.onopen = function (){
+	console.log('socket open');
+	ws.send('hello im socket client');
+}
+
+ws.onmessage = (e) => {
+	console.log( 'on message');
+	console.log(e.data);
+}
+
+
+ws.onerror = e => {
+	console.log('error');
+}
+</script>		
+</body>
+</html>
